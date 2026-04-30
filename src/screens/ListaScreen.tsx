@@ -23,19 +23,19 @@ const items = [
   {
     id: 1,
     title: 'Receta de pastas',
-    description: 'Ideas para preparar una comida casera.',
+    description: 'Receta para Spaghetti a la bolognesa para hoy a la noche',
     icon: 'restaurant',
   },
   {
     id: 2,
     title: 'Lista de compras',
-    description: 'Ingredientes y productos pendientes.',
+    description: 'Productos que faltan por comprar en el supermercado.',
     icon: 'cart',
   },
   {
     id: 3,
     title: 'Tareas del día',
-    description: 'Actividades importantes para organizarse.',
+    description: 'Task y recordatorios importantes para organizarse el dìa.',
     icon: 'checkmark-circle',
   },
 ] as const;
