@@ -1,9 +1,11 @@
+import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const ProfileScreen: React.FC = () => {
   return (
     <View style={styles.container}>
+      <Ionicons name="person" size={64} color="#16A34A" />
       <Text style={styles.title}>Perfil</Text>
       <Text style={styles.description}>
         En esta sección se muestra la información de la cuenta del usuario.
@@ -25,6 +27,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
+    marginTop: 16,
     marginBottom: 12,
   },
   description: {

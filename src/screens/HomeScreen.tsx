@@ -1,12 +1,14 @@
+import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
+      <Ionicons name="home" size={64} color="#2563EB" />
       <Text style={styles.title}>Inicio</Text>
       <Text style={styles.description}>
-        Hola! esta es la pantalla princ de la app.
+        Bienvenido a la pantalla principal de MiAppTabs.
       </Text>
     </View>
   );
@@ -25,6 +27,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
+    marginTop: 16,
     marginBottom: 12,
   },
   description: {
