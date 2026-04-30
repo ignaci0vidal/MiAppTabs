@@ -65,8 +65,26 @@ const TabIcon: React.FC<TabIconProps> = ({
     iconName = 'help-circle-outline';
   }
 
+  const markerColor =
+    routeName === 'Inicio'
+      ? '#2563EB'
+      : routeName === 'Buscar'
+      ? '#EA580C'
+      : '#16A34A';
+
   return (
     <View style={styles.iconContainer}>
+      {focused && (
+        <View
+          style={[
+            styles.activeMarker,
+            {
+              backgroundColor: markerColor,
+            },
+          ]}
+        />
+      )}
+
       <Ionicons name={iconName} size={size} color={color} />
 
       {routeName === 'Buscar' && (
@@ -89,28 +107,43 @@ const App: React.FC = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        screenOptions={({ route }) => ({
-          headerShown: true,
-          tabBarActiveTintColor: '#2563EB',
-          tabBarInactiveTintColor: '#6B7280',
-          tabBarLabelStyle: {
-            fontSize: 12,
-            fontWeight: '600',
-          },
-          tabBarStyle: {
-            height: 64,
-            paddingBottom: 8,
-            paddingTop: 8,
-          },
-          tabBarIcon: ({ color, size, focused }) => (
-            <TabIcon
-              routeName={route.name}
-              color={color}
-              size={size}
-              focused={focused}
-            />
-          ),
-        })}
+        screenOptions={({ route }) => {
+          const activeTintColor =
+            route.name === 'Inicio'
+              ? '#2563EB'
+              : route.name === 'Buscar'
+              ? '#EA580C'
+              : '#16A34A';
+
+          return {
+            headerShown: true,
+            tabBarActiveTintColor: activeTintColor,
+            tabBarInactiveTintColor: '#64748B',
+            tabBarLabelStyle: {
+              fontSize: 12,
+              fontWeight: '600',
+            },
+            tabBarItemStyle: {
+              paddingVertical: 4,
+            },
+            tabBarStyle: {
+              height: 70,
+              paddingBottom: 6,
+              paddingTop: 6,
+              backgroundColor: '#FFFFFF',
+              borderTopWidth: 1,
+              borderTopColor: '#E5E7EB',
+            },
+            tabBarIcon: ({ color, size, focused }) => (
+              <TabIcon
+                routeName={route.name}
+                color={color}
+                size={size}
+                focused={focused}
+              />
+            ),
+          };
+        }}
       >
         <Tab.Screen
           name="Inicio"
@@ -139,15 +172,22 @@ export default App;
 
 const styles = StyleSheet.create({
   iconContainer: {
-    width: 32,
-    height: 28,
+    width: 48,
+    height: 32,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  activeMarker: {
+    position: 'absolute',
+    top: -8,
+    width: 34,
+    height: 4,
+    borderRadius: 999,
   },
   badge: {
     position: 'absolute',
     top: -8,
-    right: -10,
+    right: 4,
     backgroundColor: '#EF4444',
     minWidth: 18,
     height: 18,
