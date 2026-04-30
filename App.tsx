@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 
-import HomeScreen from './src/screens/HomeScreen';
+import HomeStack from './src/navigation/HomeStack';
 import ProfileScreen from './src/screens/ProfileScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import { RootTabParamList } from './src/types/navigation';
@@ -112,7 +112,13 @@ const App: React.FC = () => {
           ),
         })}
       >
-        <Tab.Screen name="Inicio" component={HomeScreen} />
+        <Tab.Screen
+          name="Inicio"
+          component={HomeStack}
+          options={{
+            headerShown: false,
+          }}
+        />
 
         <Tab.Screen name="Buscar" component={SearchScreen} />
 
