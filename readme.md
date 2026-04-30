@@ -70,5 +70,16 @@ MiAppTabs
 └── tsconfig.json
 ```
 
+
+## Flujo de trabajo
+
+El proyecto se desarrolló de forma incremental. 
+Primero se creó la app base con Expo y TypeScript. 
+Luego se instalaron las dependencias de React Navigation y se configuró el Bottom Tab Navigator con tres pantallas: Inicio, Buscar y Perfil.
+Después se agregaron los íconos de Ionicons, el badge con número 5 en la pestaña Buscar y la personalización del label de Perfil como "Mi cuenta". 
+Finalmente se incorporaron mejoras visuales, como íconos grandes dentro de cada pantalla y una animación de pulso para el badge.
+
+Cada avance fue registrado en Git mediante commits separados.
+
 ## Desarrollado por
 Ignacio Vidal
