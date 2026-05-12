@@ -116,12 +116,12 @@ const App: React.FC = () => {
               : '#16A34A';
 
           return {
-            headerShown: true,
+            headerShown: false,
             tabBarActiveTintColor: activeTintColor,
             tabBarInactiveTintColor: '#64748B',
             tabBarLabelStyle: {
               fontSize: 12,
-              fontWeight: '600',
+              fontWeight: '600' as const,
             },
             tabBarItemStyle: {
               paddingVertical: 4,
